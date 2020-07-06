@@ -7,7 +7,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  user: {id: number, name: string};
+  user: { id: number, name: string };
 
   constructor(private route: ActivatedRoute) { }
 
@@ -15,13 +15,13 @@ export class UserComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     const name = this.route.snapshot.paramMap.get('name');
 
-    this.user = {id: +id, name};
+    this.user = { id: +id, name };
 
     this.route.paramMap.subscribe(
       (paramMap: ParamMap) => {
-        this.user= {id: +paramMap.get('id'), name: paramMap.get('name')}
+        this.user = { id: +paramMap.get('id'), name: paramMap.get('name') };
       }
-    )
+    );
   }
 
 }
